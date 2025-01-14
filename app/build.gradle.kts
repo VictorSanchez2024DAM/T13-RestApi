@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "net.iesseveroochoa.victorsanchez.t13_restapi"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "net.iesseveroochoa.victorsanchez.t13_restapi"
