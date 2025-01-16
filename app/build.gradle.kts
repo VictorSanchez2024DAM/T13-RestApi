@@ -68,6 +68,10 @@ dependencies {
 //Serializacion
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json: 1.6.3")
 
+    //retrofit. Permite manejar servicios Rest
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
