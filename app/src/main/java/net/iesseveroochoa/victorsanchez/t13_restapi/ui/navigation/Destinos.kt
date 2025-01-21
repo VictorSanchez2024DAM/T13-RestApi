@@ -7,3 +7,6 @@ object HomeDestination
 
 @Serializable
 object FavoritosDestination
+
+@Serializable
+data class DetallesDestination(val personaje: String)

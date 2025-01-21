@@ -26,6 +26,7 @@ import net.iesseveroochoa.victorsanchez.t13_restapi.data.model.Personaje
 
 @Composable
 fun HomeScreen(
+    onPersonajeClick: (Personaje) -> Unit,
     viewModel: HomeViewModel = viewModel(),
     modifier: Modifier = Modifier
 ){
@@ -74,7 +75,8 @@ fun HomeScreen(
                         items(listaPersonajes.itemCount) { index ->
                             listaPersonajes[index]?.let {
                                 PersonajeItem(
-                                    personaje = it
+                                    personaje = it,
+                                    onItemClick = { onPersonajeClick(it) }
                                 )
                             }
                         }

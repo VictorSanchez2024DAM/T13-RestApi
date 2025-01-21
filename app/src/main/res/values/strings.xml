@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">T13-RestApi</string>
+    <string name="detalles_del_personaje">Detalles del personaje</string>
+    <string name="volver">Volver</string>
 </resources>
