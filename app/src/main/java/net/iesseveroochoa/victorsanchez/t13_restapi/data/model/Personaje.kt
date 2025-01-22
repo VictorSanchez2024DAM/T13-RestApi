@@ -4,6 +4,9 @@ import java.text.DateFormat
 import java.util.Date
 import java.util.Locale
 
+/**
+ * Modelo de datos para los personajes de la API de Rick and Morty.
+ */
 data class Personaje(
     val id: Int,
     val name: String,

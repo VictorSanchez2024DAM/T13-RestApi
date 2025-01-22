@@ -10,7 +10,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,15 +27,23 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import net.iesseveroochoa.victorsanchez.t13_restapi.R
+import net.iesseveroochoa.victorsanchez.t13_restapi.data.db.PersonajeEntity
 import net.iesseveroochoa.victorsanchez.t13_restapi.data.model.Personaje
 
+/**
+ * Composable que muestra un elemento de la lista de personajes.
+ */
 @Composable
 fun PersonajeItem(
     personaje: Personaje,
-    onItemClick: () -> Unit={}
+    onItemClick: () -> Unit={},
+    onFavoriteClick: (Personaje) -> Unit,
+    isFavorito: Boolean,
+    fromFavoritos: Boolean
 ){
     // Contenedor del diseño del Item
     Card(
@@ -43,6 +58,7 @@ fun PersonajeItem(
                 .fillMaxWidth()
                 .background(Color.LightGray)
                 .padding(8.dp)
+                .background(Color(0xFFF1F8E9))
         ) {
             // Imagen del personaje
             AsyncImage(
@@ -77,7 +93,20 @@ fun PersonajeItem(
                     style = MaterialTheme.typography.bodyMedium,
                     color = Color.Green
                 )
+
+
             }
+            // Botón de favorito
+            IconButton(onClick = { onFavoriteClick(personaje) }) {
+                Icon(
+                    imageVector = if(fromFavoritos) Icons.Default.Close else
+                    if (isFavorito) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+                    contentDescription = if (isFavorito) stringResource(R.string.quitar_de_favoritos) else stringResource(
+                        R.string.a_adir_a_favoritos
+                    )
+                )
+            }
+
         }
     }
 }

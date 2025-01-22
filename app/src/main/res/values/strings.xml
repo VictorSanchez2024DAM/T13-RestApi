@@ -2,4 +2,14 @@
     <string name="app_name">T13-RestApi</string>
     <string name="detalles_del_personaje">Detalles del personaje</string>
     <string name="volver">Volver</string>
+    <string name="quitar_de_favoritos">Quitar de favoritos</string>
+    <string name="a_adir_a_favoritos">Añadir a favoritos</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="no_hay_personajes_favoritos">No hay personajes favoritos</string>
+    <string name="rick_y_morty">Rick y Morty</string>
+    <string name="confirmacion_eliminar">Confirmación de eliminación</string>
+    <string name="deseas_eliminar_favorito">¿Deseas eliminar este personaje de favoritos?</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="personajes_database">personajes_database</string>
 </resources>

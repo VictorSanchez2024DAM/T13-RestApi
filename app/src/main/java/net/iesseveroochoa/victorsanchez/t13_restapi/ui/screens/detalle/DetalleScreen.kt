@@ -50,7 +50,7 @@ fun DetalleScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)
+                .background(Color(0xFFF1F8E9))
                 .padding(paddingValues)
         ) {
 

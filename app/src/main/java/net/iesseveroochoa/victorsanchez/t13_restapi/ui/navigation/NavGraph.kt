@@ -21,6 +21,9 @@ import net.iesseveroochoa.victorsanchez.t13_restapi.ui.screens.detalle.DetalleSc
 import net.iesseveroochoa.victorsanchez.t13_restapi.ui.screens.favoritos.FavoritosScreen
 import net.iesseveroochoa.victorsanchez.t13_restapi.ui.screens.home.HomeScreen
 
+/**
+ * Navegación entre pantallas.
+ */
 @Composable
 fun AppNavigation(){
     val navController = rememberNavController()
@@ -77,7 +80,10 @@ fun AppNavigation(){
             } // Pantalla favoritos
             composable<FavoritosDestination>{
                 FavoritosScreen(
-
+                    onPersonajeClick = { personaje ->
+                        val personajeJson = personajeToJson(personaje)
+                        navController.navigate(DetallesDestination(personajeJson))
+                    }
                 )
             }
             // Pantalla de detalles
